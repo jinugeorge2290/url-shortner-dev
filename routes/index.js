@@ -13,6 +13,11 @@ function ensureAuth(req, res, next) {
   res.redirect("/auth/google");
 }
 
+router.get("/shorten", ensureAuth, (req, res) => {
+  res.render("shorten", { user: req.user, body: null });
+});
+
+
 router.get("/", (req, res) => {
   if (req.isAuthenticated()) return res.redirect("/dashboard");
   res.render("index", { user: null, body: null });
@@ -48,8 +53,12 @@ router.post("/shorten", ensureAuth, async (req, res) => {
     })
     .promise();
 
-  res.send(`Short URL: <a href="/${shortCode}">/${shortCode}</a>`);
+  res.render("shorten", {
+    user: req.user,
+    body: { shortCode },
+  });
 });
+
 
 router.get("/:code", async (req, res) => {
   const { code } = req.params;

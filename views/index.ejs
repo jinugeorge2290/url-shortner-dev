@@ -1,6 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - URL Shortener</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white shadow-xl rounded-lg p-8 max-w-sm w-full text-center">
+      <h1 class="text-3xl font-bold text-blue-600 mb-4">Welcome to URL Shortener</h1>
+      <p class="text-gray-600 mb-6">Sign in to shorten and manage your URLs.</p>
 
-<%- include('layout', { title: 'Welcome' }) %>
-<div class="text-center">
-  <h1 class="mb-4">Welcome to the URL Shortener</h1>
-  <a href="/auth/google" class="btn btn-primary btn-lg">Login with Google</a>
-</div>
+      <a
+        href="/auth/google"
+        class="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-md text-sm font-medium"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 488 512" fill="currentColor">
+          <path d="M488 261.8c0-17.8-1.5-35-4.4-51.8H249v98h135.7c-5.9 31-23.5 57.3-50.3 74.8v62.2h81.3c47.6-43.8 74.3-108.5 74.3-183.2z"/>
+          <path d="M249 512c67 0 123.1-22.3 164.1-60.6l-81.3-62.2c-22.6 15.1-51.4 23.8-82.8 23.8-63.6 0-117.5-42.8-136.8-100.4H29v62.9C70.7 463.6 153.4 512 249 512z"/>
+          <path d="M112.2 309.6c-7.4-21.8-7.4-45.2 0-66.9v-62.9H29c-30.3 59.4-30.3 129.5 0 188.9l83.2-59.1z"/>
+          <path d="M249 97.8c35.9-.5 70.3 13.4 96.3 38.4l72-72.1C373.3 23.5 312.4-.2 249 0 153.4 0 70.7 48.4 29 125.1l83.2 62.9C131.5 140.5 185.4 97.8 249 97.8z"/>
+        </svg>
+        Sign in with Google
+      </a>
+    </div>
+  </body>
+</html>
